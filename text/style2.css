@@ -1,0 +1,137 @@
+*
+{
+margin: 0;
+padding: 0;
+box-sizing:content;
+}
+body
+{
+  display:flex;
+justify-content:center;
+align-items: center;
+min-height: 100vh;
+background: black;
+}
+.loader 
+{
+  position: relative;
+  -webkit-box-reflect: below -28px linear-gradient(transparent,#0002);
+}
+.loader:before
+{
+  content:'';
+  position:absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: red;
+  animation: blinkCursor 0.8s steps(3)
+}
+@keyframes blinkCursor
+{
+  0%,75%
+  {
+    opacity: 1;    
+  }
+  76%, 100%
+  {
+    opacity: 0;
+  }
+}
+.loader h2 
+{
+  position:relative;
+  color:red;
+  letter-spacing: 5px;
+  font-size: 4em;
+  text-transform: uppercase;
+  animation: typing 8s steps(10);
+  overflow: hidden;
+}
+@keyframes typing
+{
+ 0%,90%,100%
+ {
+  width: 0;
+}
+ 30%,60%
+ {
+  width: 264.75px;
+ }
+}
+ /* ↑ Оформление ↑ */
+/* ↓ Кнопка ↓ */
+html,
+body {
+    margin: -5px;
+    padding: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+}
+
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -5px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: -2;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+/* ↑ Кнопка ↑ */
