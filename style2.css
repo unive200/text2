@@ -3,7 +3,6 @@
 margin: 0;
 padding: 0;
 box-sizing:content;
-font-family: serif;
 }
 body
 {
@@ -28,7 +27,6 @@ background: black;
   height: 100%;
   background: red;
   animation: blinkCursor 0.8s steps(3)
-
 }
 @keyframes blinkCursor
 {
